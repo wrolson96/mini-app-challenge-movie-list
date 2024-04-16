@@ -69,7 +69,8 @@ export default function DisplayMovies() {
             </div>
             <div className="watched-list">
                 <button type="button" value="Watch" onClick={() => handleWatch()}>{watch ? "Watched Movies" : "Need to Watch"}</button>
-                {watchMovieList.map((movie) => <h4>{movie.title}</h4>)}
+
+                {watchMovieList ? watchMovieList.map((movie) => <h4 key={movie.id}>{movie.title}</h4>) : <h4>No movies to display</h4>}
 
             </div>
         </div>
